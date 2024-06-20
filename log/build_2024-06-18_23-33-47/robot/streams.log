@@ -1,0 +1,36 @@
+[0.266s] Invoking command in '/home/compo/team_ws/build/robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/compo/team_ws/install/joy_tester:/opt/ros/humble /usr/bin/cmake --build /home/compo/team_ws/build/robot -- -j8 -l8
+[0.455s] Invoked command in '/home/compo/team_ws/build/robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/compo/team_ws/install/joy_tester:/opt/ros/humble /usr/bin/cmake --build /home/compo/team_ws/build/robot -- -j8 -l8
+[0.485s] Invoking command in '/home/compo/team_ws/build/robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/compo/team_ws/install/joy_tester:/opt/ros/humble /usr/bin/cmake --install /home/compo/team_ws/build/robot
+[0.491s] -- Install configuration: ""
+[0.492s] -- Execute custom install script
+[0.492s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/lib/robot/teleop_keyboard.py
+[0.492s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/launch/joystick.launch.py
+[0.492s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/launch/launch_robot.launch.py
+[0.493s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/launch/launch_sim.launch.py
+[0.493s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/launch/launch_teleop.launch.py
+[0.493s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/launch/launch_teleop_joystick.launch.py
+[0.493s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/launch/rsp.launch.py
+[0.493s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/urdf/gazebo_control.xacro
+[0.493s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/urdf/inertial_macros.xacro
+[0.493s] -- Symlinking: /home/compo/team_ws/install/robot/share/robot/urdf/lidar.xacro
+[0.501s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/urdf/robot.urdf.xacro
+[0.502s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/urdf/robot_core.xacro
+[0.502s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/worlds/obstacles.world
+[0.502s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/config/joystick.yaml
+[0.502s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/ament_index/resource_index/package_run_dependencies/robot
+[0.502s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/ament_index/resource_index/parent_prefix_path/robot
+[0.503s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/environment/ament_prefix_path.sh
+[0.503s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/environment/ament_prefix_path.dsv
+[0.503s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/environment/path.sh
+[0.503s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/environment/path.dsv
+[0.503s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/local_setup.bash
+[0.504s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/local_setup.sh
+[0.504s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/local_setup.zsh
+[0.504s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/local_setup.dsv
+[0.504s] -- Symlinking: /home/compo/team_ws/install/robot/share/robot/package.dsv
+[0.512s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/ament_index/resource_index/packages/robot
+[0.512s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.512s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/cmake/robotConfig.cmake
+[0.512s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/cmake/robotConfig-version.cmake
+[0.513s] -- Up-to-date symlink: /home/compo/team_ws/install/robot/share/robot/package.xml
+[0.514s] Invoked command in '/home/compo/team_ws/build/robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/compo/team_ws/install/joy_tester:/opt/ros/humble /usr/bin/cmake --install /home/compo/team_ws/build/robot

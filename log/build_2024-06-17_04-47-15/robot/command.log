@@ -1,0 +1,6 @@
+Invoking command in '/home/compo/team_ws/build/robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/compo/team_ws/src/robot -DCMAKE_INSTALL_PREFIX=/home/compo/team_ws/install/robot
+Invoked command in '/home/compo/team_ws/build/robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/compo/team_ws/src/robot -DCMAKE_INSTALL_PREFIX=/home/compo/team_ws/install/robot
+Invoking command in '/home/compo/team_ws/build/robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/compo/team_ws/build/robot -- -j8 -l8
+Invoked command in '/home/compo/team_ws/build/robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/compo/team_ws/build/robot -- -j8 -l8
+Invoking command in '/home/compo/team_ws/build/robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/compo/team_ws/build/robot
+Invoked command in '/home/compo/team_ws/build/robot' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/compo/team_ws/build/robot

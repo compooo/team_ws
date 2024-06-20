@@ -1,0 +1,14 @@
+[0.012s] Invoking command in '/home/compo/team_ws/build/robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/compo/team_ws/build/robot -- -j8 -l8
+[0.050s] Invoked command in '/home/compo/team_ws/build/robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/compo/team_ws/build/robot -- -j8 -l8
+[0.081s] Invoking command in '/home/compo/team_ws/build/robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/compo/team_ws/build/robot
+[0.088s] -- Install configuration: ""
+[0.089s] -- Execute custom install script
+[0.089s] [31mCMake Error at ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:204 (message):
+[0.089s]   ament_cmake_symlink_install_programs() can't find
+[0.089s]   '/home/compo/team_ws/src/robot/scripts/teleop.py'
+[0.089s] Call Stack (most recent call first):
+[0.089s]   ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:314 (ament_cmake_symlink_install_programs)
+[0.089s]   cmake_install.cmake:46 (include)
+[0.089s] 
+[0.089s] [0m
+[0.090s] Invoked command in '/home/compo/team_ws/build/robot' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/compo/team_ws/build/robot

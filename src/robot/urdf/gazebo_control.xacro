@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- this file need to reconfigure as four wheel robot-->
+    <gazebo>
+        <!-- name     -> anyname you want to write it
+        -    filename -> the name of plugin that you are using -->
+        <plugin name="skid_steer_drive" filename="libgazebo_ros_diff_drive.so">
+
+            <!-- Wheel Information -->
+
+            <!-- Number of wheel pairs-->
+            <num_wheel_pairs>2</num_wheel_pairs>
+
+            <!-- Rear wheel -->
+            <left_joint>left_rear_wheel_joint</left_joint>
+            <right_joint>right_rear_wheel_joint</right_joint>
+            
+            <!-- front wheel -->
+            <left_joint>left_front_wheel_joint</left_joint>
+            <right_joint>right_front_wheel_joint</right_joint>
+
+            <!-- distance between every opposite 2 wheel-->
+            <wheel_separation>0.55</wheel_separation>
+            <wheel_separation>0.55</wheel_separation>
+            <wheel_diameter>0.2</wheel_diameter>
+            <wheel_diameter>0.2</wheel_diameter>
+
+            <!-- Limits -->
+            <max_wheel_torque>200</max_wheel_torque>
+            <max_wheel_acceleration>10.0</max_wheel_acceleration>
+
+            <!-- OUTPUT -->
+            <odometry_frame>odom</odometry_frame>
+            <robot_base_frame>base_link</robot_base_frame>
+
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_wheel_tf>true</publish_wheel_tf>
+
+
+
+        </plugin>
+    </gazebo>
+
+    
+</robot>

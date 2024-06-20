@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+
+    <xacro:include filename="inertial_macros.xacro"/>
+
+    <!-- define colors that i will use in all xacro files-->
+    <material name="white">
+        <color rgba="1 1 1 1" />
+    </material>
+
+    <material name="orange">
+        <color rgba="1 0.3 0.1 1" />
+    </material>
+
+    <material name="blue">
+        <color rgba="0.2 0.2 1 1"/>
+    </material>
+
+    <material name="black">
+        <color rgba="0 0 0 1" />
+    </material>
+
+    <material name="red">
+        <color rgba="1 0 0 1"/>
+    </material>
+
+    <!-- start to make links-->
+    <!-- base_link-->
+    <link name="base_link">
+
+    </link>
+
+    <!-- Base_Footprint link-->
+
+    <joint name="base_footprint_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="base_footprint"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="base_footprint">
+    </link>
+
+    <!-- chassis_link-->
+    <!-- i need the chassis_joint on the back of robot-->
+    <joint name="chassis_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="chassis_link"/>
+        <origin xyz="-0.5 0 0"/>
+    </joint>
+
+    <link name="chassis_link">
+        <visual>
+            <!-- we need the origin of chassis at the back of robot so shift the visual of chassis by half in x and z-->
+            <origin xyz="0.5 0 0.15"/>
+            <geometry>
+                <!-- diemensions of our robot x y z-->
+                <box size="1 0.5 0.3"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <!-- collsion contain same parameters in visual but without material -->
+        <collision>
+            <!-- we need the origin of chassis at the back of robot so shift the visual of chassis by half in x and z-->
+            <origin xyz="0.5 0 0.15"/>
+            <geometry>
+                <!-- diemensions of our robot x y z-->
+                <box size="1 0.5 0.3"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.5" x="1" y="0.5" z="0.3">
+            <!-- origin must be the same origin in the visual not in the joint -->
+            <origin xyz="0.5 0 0.15" rpy="0 0 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <!-- gazebo tag here to define colors of the material on gazebo and not appear all
+         material as a white color -->
+    <gazebo reference="chassis_link">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    
+
+
+    <!-- Wheels -->
+
+
+    <!-- so when adjust to our robot i need to know 
+    -    centre of rotation to adjust the structure to it
+    -    position of our wheels from base_link-->
+    <!-- Left rear wheel link -->
+    <joint name="left_rear_wheel_joint" type="continuous">
+        <!-- we coud connect them to chassis but instead
+        -    i am going to connect them directly to the base_link because
+        -    if you remember the whole point of the base link was that it was at the centre
+        -    of rotation of wheels-->
+        <parent link="base_link"/>
+        <child link="left_rear_wheel_link"/>
+        <!-- In ROS cylinders by default are oreinted along the z-axis 
+                so up and down but we need our wheels oreinted along the y-axis so from
+                left to right so we need to rotate that cylinder that would current be going
+                in the z-axis we want to roll it by a quarter turn around the x-axis so that
+                it is pointing along y-axis-->
+        <!-- we need z point to out of the robot so rotate in x -pi/2-->
+        <origin xyz="-0.25 0.275 0" rpy="-${pi/2} 0 0"/>
+        <!-- we need to specify axis of rotation, we want that to be positive around z-axis
+             so anti-clockwise around z-->
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="left_rear_wheel_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_cylinder mass="0.1" length="0.05" radius="0.1">
+            <!-- if there no origin in the visual put it all zeros-->
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
+    </link>
+
+    <!-- gazebo tag here to define colors of the material on gazebo and not appear all
+     material as a white color -->
+     <gazebo reference="left_rear_wheel_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+
+    <!-- Left front wheel link -->
+    <joint name="left_front_wheel_joint" type="continuous">
+        <!-- we coud connect them to chassis but instead
+        -    i am going to connect them directly to the base_link because
+        -    if you remember the whole point of the base link was that it was at the centre
+        -    of rotation of wheels-->
+        <parent link="base_link"/>
+        <child link="left_front_wheel_link"/>
+        <!-- In ROS cylinders by default are oreinted along the z-axis 
+                so up and down but we need our wheels oreinted along the y-axis so from
+                left to right so we need to rotate that cylinder that would current be going
+                in the z-axis we want to roll it by a quarter turn around the x-axis so that
+                it is pointing along y-axis-->
+        <!-- we need z point to out of the robot so rotate in x -pi/2-->
+        <origin xyz="0.25 0.275 0" rpy="-${pi/2} 0 0"/>
+        <!-- we need to specify axis of rotation, we want that to be positive around z-axis
+             so anti-clockwise around z-->
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="left_front_wheel_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_cylinder mass="0.1" length="0.05" radius="0.1">
+            <!-- if there no origin in the visual put it all zeros-->
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
+    </link>
+
+    <!-- gazebo tag here to define colors of the material on gazebo and not appear all
+     material as a white color -->
+     <gazebo reference="left_front_wheel_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+
+    <!-- Right rear wheel link -->
+    <joint name="right_rear_wheel_joint" type="continuous">
+        <!-- we coud connect them to chassis but instead
+        -    i am going to connect them directly to the base_link because
+        -    if you remember the whole point of the base link was that it was at the centre
+        -    of rotation of wheels-->
+        <parent link="base_link"/>
+        <child link="right_rear_wheel_link"/>
+        <!-- In ROS cylinders by default are oreinted along the z-axis 
+                so up and down but we need our wheels oreinted along the y-axis so from
+                left to right so we need to rotate that cylinder that would current be going
+                in the z-axis we want to roll it by a quarter turn around the x-axis so that
+                it is pointing along y-axis-->
+        <!-- we need z point to out of the robot so rotate in x pi/2-->
+        <origin xyz="-0.25 -0.275 0" rpy="${pi/2} 0 0"/>
+        <!-- we need to specify axis of rotation, we want that to be positive around z-axis
+             so clockwise around z-->
+        <axis xyz="0 0 -1"/>
+    </joint>
+
+    <link name="right_rear_wheel_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_cylinder mass="0.1" length="0.05" radius="0.1">
+            <!-- if there no origin in the visual put it all zeros-->
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
+    </link>
+
+    <!-- gazebo tag here to define colors of the material on gazebo and not appear all
+     material as a white color -->
+     <gazebo reference="right_rear_wheel_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+
+    <!-- Right front wheel link -->
+    <joint name="right_front_wheel_joint" type="continuous">
+        <!-- we coud connect them to chassis but instead
+        -    i am going to connect them directly to the base_link because
+        -    if you remember the whole point of the base link was that it was at the centre
+        -    of rotation of wheels-->
+        <parent link="base_link"/>
+        <child link="right_front_wheel_link"/>
+        <!-- In ROS cylinders by default are oreinted along the z-axis 
+                so up and down but we need our wheels oreinted along the y-axis so from
+                left to right so we need to rotate that cylinder that would current be going
+                in the z-axis we want to roll it by a quarter turn around the x-axis so that
+                it is pointing along y-axis-->
+        <!-- we need z point to out of the robot so rotate in x pi/2-->
+        <origin xyz="0.25 -0.275 0" rpy="${pi/2} 0 0"/>
+        <!-- we need to specify axis of rotation, we want that to be positive around z-axis
+             so clockwise around z-->
+        <axis xyz="0 0 -1"/>
+    </joint>
+
+    <link name="right_front_wheel_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_cylinder mass="0.1" length="0.05" radius="0.1">
+            <!-- if there no origin in the visual put it all zeros-->
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
+    </link>
+
+    <!-- gazebo tag here to define colors of the material on gazebo and not appear all
+     material as a white color -->
+     <gazebo reference="right_front_wheel_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+</robot>

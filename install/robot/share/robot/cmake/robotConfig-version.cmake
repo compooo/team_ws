@@ -1,0 +1,1 @@
+/home/compo/team_ws/build/robot/ament_cmake_core/robotConfig-version.cmake

@@ -1,0 +1,37 @@
+[1.987s] Invoking command in '/home/compo/team_ws/build/joy_tester': PYTHONPATH=/home/compo/team_ws/build/joy_tester/prefix_override:/home/compo/team_ws/install/joy_tester/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/compo/team_ws/build/joy_tester/build --no-deps symlink_data
+[2.296s] running develop
+[2.303s] /home/compo/.local/lib/python3.10/site-packages/setuptools/command/develop.py:40: EasyInstallDeprecationWarning: easy_install command is deprecated.
+[2.304s] !!
+[2.304s] 
+[2.304s]         ********************************************************************************
+[2.304s]         Please avoid running ``setup.py`` and ``easy_install``.
+[2.304s]         Instead, use pypa/build, pypa/installer or other
+[2.304s]         standards-based tools.
+[2.304s] 
+[2.304s]         See https://github.com/pypa/setuptools/issues/917 for details.
+[2.304s]         ********************************************************************************
+[2.304s] 
+[2.304s] !!
+[2.304s]   easy_install.initialize_options(self)
+[2.525s] running egg_info
+[2.525s] creating joy_tester.egg-info
+[2.541s] writing joy_tester.egg-info/PKG-INFO
+[2.542s] writing dependency_links to joy_tester.egg-info/dependency_links.txt
+[2.542s] writing entry points to joy_tester.egg-info/entry_points.txt
+[2.542s] writing requirements to joy_tester.egg-info/requires.txt
+[2.542s] writing top-level names to joy_tester.egg-info/top_level.txt
+[2.542s] writing manifest file 'joy_tester.egg-info/SOURCES.txt'
+[2.576s] reading manifest file 'joy_tester.egg-info/SOURCES.txt'
+[2.576s] writing manifest file 'joy_tester.egg-info/SOURCES.txt'
+[2.643s] running build_ext
+[2.643s] Creating /home/compo/team_ws/install/joy_tester/lib/python3.10/site-packages/joy-tester.egg-link (link to .)
+[2.644s] Installing test_joy script to /home/compo/team_ws/install/joy_tester/lib/joy_tester
+[2.644s] 
+[2.644s] Installed /home/compo/team_ws/build/joy_tester
+[2.645s] running symlink_data
+[2.645s] creating /home/compo/team_ws/install/joy_tester/share/ament_index
+[2.645s] creating /home/compo/team_ws/install/joy_tester/share/ament_index/resource_index
+[2.645s] creating /home/compo/team_ws/install/joy_tester/share/ament_index/resource_index/packages
+[2.645s] symbolically linking /home/compo/team_ws/build/joy_tester/resource/joy_tester -> /home/compo/team_ws/install/joy_tester/share/ament_index/resource_index/packages
+[2.645s] symbolically linking /home/compo/team_ws/build/joy_tester/package.xml -> /home/compo/team_ws/install/joy_tester/share/joy_tester
+[2.671s] Invoked command in '/home/compo/team_ws/build/joy_tester' returned '0': PYTHONPATH=/home/compo/team_ws/build/joy_tester/prefix_override:/home/compo/team_ws/install/joy_tester/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/compo/team_ws/build/joy_tester/build --no-deps symlink_data
