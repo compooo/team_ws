@@ -28,9 +28,10 @@ class MotorControlNode(Node):
             10)  # Adjust queue size if needed
 
     def velocity_callback(self, msg):
+        direction= 0
         # Calculate individual motor speeds based on kinematics (differential drive)
         left_motor_speed = msg.linear.x + msg.angular.z * self.wheel_base / 2
-        right_motor_speed = msg.linear.x - msg.angular.z * self.wheel_base / 2
+        right_motor_speed = msg.linear.x + msg.angular.z * self.wheel_base / 2
 
         # Print information to terminal
         self.get_logger().info(f"Received velocity: linear={msg.linear.x}, angular={msg.angular.z}")
@@ -40,11 +41,21 @@ class MotorControlNode(Node):
         left_motor_control = int(left_motor_speed * 255)  # Example: Scale to 0-255
         right_motor_control = int(right_motor_speed * 255)
 
-        self.get_logger().info(f"Calculated speeds: left={left_motor_control}, right={right_motor_control}")
+        if left_motor_control >=0 & right_motor_control>=0:
+            direction_1=0
+            direction_2=1
+            command_string = f"P,{abs(left_motor_control)},{abs(right_motor_control)},{direction_1},{direction_2}\n"
+        else:
+            direction_1=1
+            direction_2=0
+            command_string = f"P,{abs(left_motor_control)},{abs(right_motor_control)},{direction_1},{direction_2}\n"
+
+
+        self.get_logger().info(f"Calculated speeds: left={left_motor_control}, right={right_motor_control}, direction_1={direction_1}, direction_2={direction_2}")
 
 
         # Send control signals to Arduino via serial communication
-        command_string = f"P,{left_motor_control},{right_motor_control}\n"
+        #command_string = f"P,{abs(left_motor_control)},{abs(right_motor_control)}\n"
         self.ser.write(command_string.encode())
         self.get_logger().debug(f"Sending command: {command_string}")
         self.get_logger().info(f"Received: {' '.join(command_string)}")

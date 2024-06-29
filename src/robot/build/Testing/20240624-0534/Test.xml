@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20240624-0534-Experimental"
+	Name="compo"
+	Generator="ctest-3.22.1"
+	CompilerName="/usr/bin/c++"
+	CompilerVersion="11.4.0"
+	OSName="Linux"
+	Hostname="compo"
+	OSRelease="6.5.0-41-generic"
+	OSVersion="#41~22.04.2-Ubuntu SMP PREEMPT_DYNAMIC Mon Jun  3 11:32:55 UTC 2"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="142"
+	ProcessorCacheSize="8192"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="4"
+	TotalVirtualMemory="14032"
+	TotalPhysicalMemory="11830"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="4364.46"
+	>
+	<Testing>
+		<StartDateTime>Jun 24 08:34 EEST</StartDateTime>
+		<StartTestTime>1719207257</StartTestTime>
+		<TestList/>
+		<EndDateTime>Jun 24 08:34 EEST</EndDateTime>
+		<EndTestTime>1719207257</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>
